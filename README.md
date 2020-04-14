@@ -9,12 +9,12 @@ The goal of markovChains is to provide basic simulation, estimation and modeling
 
 ## Features
 
-- [x] simulating both discrete and continuous time Markov chains
-- [x] estimating the transition matrices of discrete and continuous time chains
-- [x] computing the stationary distribution if it exists of DTMCs
-- [ ] computing the stationary distribution if it exists of DTMCs
-- [ ] common transition matrix functions available for quickly populating matrices
-- [ ] more to come...
+- [x] Simulating both discrete and continuous time Markov chains
+- [x] Estimating the transition matrices of discrete and continuous time chains
+- [x] Computing the stationary distribution if it exists of DTMCs
+- [ ] Computing the stationary distribution if it exists of DTMCs
+- [ ] Common transition matrix functions available for quickly populating matrices
+- [ ] More to come...
 
 ## Table of contents
 1. [Installation](#installation)
@@ -51,3 +51,17 @@ x <- rctmc(tt, Q, im, states = c(0:(m-1)))
 # Plotting the process
 plot(x, type = "s", main = "Birth and Death Process")
 ```
+### Simulating a Shakespearean "Sonnet"
+Okay this will not actually follow the rhyming scheme of a sonnet, but it will give off a mild Shakespearean effect by using his vocab and first-order word frequencies. Included is a data.frame of all 154 sonnets by Shakespeare.
+```r
+library(markovChains)
+# Load the sonnet data and format as an observable Markov chain
+sonnet_data <- observe_sonnet_chain()
+# Estimate the first-order transition matrix
+P <- estimate_dtmc(chain = sonnet_data$encodedChain, m = length(sonnet_data$stateSpace))
+# Generate your new sonnet
+sonnet <- markov_sonnet(sonnet_data, P)
+print(sonnet)
+```
+
+
