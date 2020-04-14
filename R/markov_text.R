@@ -1,21 +1,20 @@
 #' Generate a first-order Markov chain Shakespearean sonnet
 #'
-#' @param sonnet_data the object returned from \code{observe_sonnet_chain()}, a list containing \code{wordChain}, \code{encodedChain}, and \code{stateSpace}
+#' @param text_data the object returned from \code{observe_text()}, a list containing \code{wordChain}, \code{encodedChain}, and \code{stateSpace}
 #' @param P the probability transition matrix, if not passed will be estimated from the \code{sonnet_data} dataset
+#' @param wordsPerLine the number of words per line
+#' @param numLines the number of lines
 #'
 #' @description {The transition probability matrix is estimated from all 154 sonnets}
 #' @return string/character
-#' @export markov_sonnet
-markov_sonnet <- function(sonnet_data, P = NULL)
+#' @export markov_text
+markov_text <- function(text_data, P = NULL, wordsPerLine = 10, numLines = 14)
 {
   # Extract data
-  wordChain <- sonnet_data$wordChain
-  encodedChain <- sonnet_data$encodedChain
-  stateSpace <- sonnet_data$stateSpace
-
-  # Sonnet formatting
-  wordsPerLine <- 10
-  simLength <- 14*wordsPerLine
+  wordChain <- text_data$wordChain
+  encodedChain <- text_data$encodedChain
+  stateSpace <- text_data$stateSpace
+  simLength <- numLines*wordsPerLine
 
   # Estimate transition-probability matrix
   if(is.null(P))

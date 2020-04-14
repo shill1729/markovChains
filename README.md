@@ -51,8 +51,15 @@ x <- rctmc(tt, Q, im, states = c(0:(m-1)))
 # Plotting the process
 plot(x, type = "s", main = "Birth and Death Process")
 ```
+
+## Markov text generators
+
+We provide some rough but amusing text generators devoid of punctuation and lower/uppercase distinctions. The first example is from using Shakespeare's 154 sonnets the second is Bukowski's Ham on Rye.
+
 ### Simulating a Shakespearean "Sonnet"
+
 Okay this will not actually follow the rhyming scheme of a sonnet, but it will give off a mild Shakespearean effect by using his vocab and first-order word frequencies. Included is a data.frame of all 154 sonnets by Shakespeare.
+
 ```r
 library(markovChains)
 # Load the sonnet data and format as an observable Markov chain
@@ -60,7 +67,7 @@ sonnet_data <- observe_sonnet_chain()
 # Estimate the first-order transition matrix
 P <- estimate_dtmc(chain = sonnet_data$encodedChain, m = length(sonnet_data$stateSpace))
 # Generate your new sonnet
-sonnet <- markov_sonnet(sonnet_data, P)
+sonnet <- markov_text(sonnet_data, P)
 print(sonnet) # an example output:
 # [1] "in pays bore paws last forebemoaned starved four composition possessing"            
 # [2] "follow esteeming excusing nine worst word foregone wardrobe poverty famine"         
@@ -78,3 +85,31 @@ print(sonnet) # an example output:
 # [14] "loathsome care made roses commits titles rather healthful sire wars"
 ```
 
+### Simulating Ham On Rye
+
+This one is going to be real non-sensical. 
+
+```r
+library(markovChains)
+# Load the text data and format as an observable Markov chain
+text_data <- observe_ham_on_rye() # use reducedSize = NULL for full 80,000 word chain
+# Estimate the first-order transition matrix
+P <- estimate_dtmc(chain = text_data$encodedChain, m = length(text_data$stateSpace))
+# Generate your new text: default 14 lines with 10 words per line.
+textout <- markov_text(text_data, P)
+print(textout) # an example output:
+# [1] "it 35 satin ship track worship peek checking hari cs"                                   
+# [2] "prevent striped hunk jab dried mrs windmilled instructed depicted ma"                   
+# [3] "nod doorways relentless tuition care stab sessions 523 purple rooting"                  
+# [4] "platform christ fenster valves semi aplomb melodrama apes reach hoho"                   
+# [5] "tits suicided meaningless next starched durham sisters dried 8th batter"                
+# [6] "by staring 8 mutilated kittens refused disrobe shit let homo"                           
+# [7] "handkerchief fall jungle track going flower webs surrendered glistening items"          
+# [8] "blades stand jap bill successful handkerchiefs triumph scratched pomp corps"            
+# [9] "docked pearshaped kicked equipment butts mere switch unmarred everybodys fly"           
+# [10] "limping befriended toughest sit werent stopped homemade mates adopted energy"           
+# [11] "indian mound effective crash tanks fantastic dull girlwoman candle fidget"              
+# [12] "admired passes roast arguing gum timecard appointment worthwhile to rightwing"          
+# [13] "clumps except fighter biologist greener nomansland meatballs kickoff equipment firm"    
+# [14] "umpire windmilled deserved stretched mustard stockboy leading blackboards points morris"
+```

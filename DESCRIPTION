@@ -7,6 +7,7 @@ Maintainer: S. Hill <52792611+shill1729@users.noreply.github.com>
 Description: Provides functions for simulating Markov chains in both discrete and continuous time as well as
     estimating transition probability or transition rate matrices from observed chains. Other features include computing
     stationary distributions and other statistical properties of a chain.
+Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Imports: stats, Matrix, utils
 Encoding: UTF-8
