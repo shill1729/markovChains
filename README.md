@@ -61,7 +61,20 @@ sonnet_data <- observe_sonnet_chain()
 P <- estimate_dtmc(chain = sonnet_data$encodedChain, m = length(sonnet_data$stateSpace))
 # Generate your new sonnet
 sonnet <- markov_sonnet(sonnet_data, P)
-print(sonnet)
+print(sonnet) # an example output:
+# [1] "in pays bore paws last forebemoaned starved four composition possessing"            
+# [2] "follow esteeming excusing nine worst word foregone wardrobe poverty famine"         
+# [3] "huge dost love delights receives offences lovekindling refuse paid lame"            
+# [4] "minion twixt paper sword us beweep hammered ear honest his"                         
+# [5] "wastes preserve indirectly point crave dearpurchased alien towers oergreen disperse"
+# [6] "brood each reeleth being weeds far wanton selfdoing played fashion"                 
+# [7] "servant grow ragged hast womans unto estimate widows snow wights"                   
+# [8] "fee betwixt loathsome hardest repair bath these wardrobe eat slumbers"              
+# [9] "doing riot greet pent growst unknown once sufferance watching closet"               
+# [10] "injurious woe fingers action flown shaken whose chronicle prevent dwellers"         
+# [11] "souls selflove phrase potions lace whether no bearing hooks cunning"                
+# [12] "reigns anothers view carve workings for comments thriftless awakes sufferance"      
+# [13] "thing lacking returnd print attend trees impiety temptation jewels slain"           
+# [14] "loathsome care made roses commits titles rather healthful sire wars"
 ```
-
 
