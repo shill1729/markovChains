@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of markovChains is to provide basic simulation, estimation and modeling schemes, routines and functions in R for both discrete time and continuous time matrices.
+Work in progress package for providing functions in R for simulations of Markov chains, estimation of probability transition matrices and transition rate matrices, and computation of stationary distributions (when they exist) for *both* discrete time and continuous time Markov chains.
 
 
 ## Features
@@ -12,7 +12,8 @@ The goal of markovChains is to provide basic simulation, estimation and modeling
 - [x] Simulating both discrete and continuous time Markov chains
 - [x] Estimating the transition matrices of discrete and continuous time chains
 - [x] Computing the stationary distribution if it exists of DTMCs
-- [ ] Computing the stationary distribution if it exists of DTMCs
+- [X] Sample text generation
+- [ ] Computing the stationary distribution if it exists of CTMCs
 - [ ] Common transition matrix functions available for quickly populating matrices
 - [ ] More to come...
 
