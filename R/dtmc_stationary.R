@@ -16,8 +16,7 @@ dtmc_stationary <- function (P)
   rank.Ab <- as.numeric(Matrix::rankMatrix(cbind(A, b)))
   if (rank.A != rank.Ab) {
     stop("b in Ax=b not in column space of A")
-  }
-  else {
+  } else {
     return(drop(solve(t(A) %*% A, t(A) %*% b)))
   }
 }

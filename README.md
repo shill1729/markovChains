@@ -53,6 +53,35 @@ x <- rctmc(tt, Q, im, states = c(0:(m-1)))
 plot(x, type = "s", main = "Birth and Death Process")
 ```
 
+## Biology examples
+
+### Hemoglobin model (unfinished)
+A hemoglobin molecule can carry one oxygen or one carbon monoxide molecule, exclusively. Suppose that the two types of gas molecules arrive at rates 1 and 2 and attach for an exponentiall amounto f time of 3 adn 4, respectively. The + denotes attached oxygen, - denotes attached carbon monoxide and 0 denotes free hemoglobin molecule. Find long run fraction of the time the hemoglobin spends in each three states.
+```r
+library(markovChains)
+# Transition rate matrix
+Q <- rbind(c(-3, 3, 0),
+           c(1, -3, 2),
+           c(0, 4, -4))
+# Embedded jump-chain
+J <- jump_chain(Q)
+# Semigroup P(t)
+Pt <- semigroup(100, Q)
+# States the hemoglobin molecule is in: + oxygen, 0 neither, - carbon monoxide
+states <- c("+", "0", "-")
+# Simulate the CTMC
+x <- rctmc(10, Q = Q, mu = c(0, 1, 0), states = states)
+
+print("Infinitesimal generator")
+print(Q)
+print("Jump-chain transition probability matrix")
+print(J)
+print("Long term probability transition semigroup matrix")
+print(Pt)
+print("Simulation")
+print(head(x))
+```
+
 ## Markov text generators
 
 We provide some rough but amusing text generators devoid of punctuation and lower/uppercase distinctions. The first example is from using Shakespeare's 154 sonnets the second is Bukowski's Ham on Rye.
