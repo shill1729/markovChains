@@ -56,7 +56,7 @@ plot(x, type = "s", main = "Birth and Death Process")
 ## Biology examples
 
 ### Hemoglobin model (unfinished)
-A hemoglobin molecule can carry one oxygen or one carbon monoxide molecule, exclusively. Suppose that the two types of gas molecules arrive at rates 1 and 2 and attach for an exponentiall amounto f time of 3 adn 4, respectively. The + denotes attached oxygen, - denotes attached carbon monoxide and 0 denotes free hemoglobin molecule. Find long run fraction of the time the hemoglobin spends in each three states.
+A hemoglobin molecule can carry one oxygen or one carbon monoxide molecule, exclusively. Suppose that the two types of gas molecules arrive at rates 1 and 2 and attach for an exponentiall amount of time of 3 and 4, respectively. The + denotes attached oxygen, - denotes attached carbon monoxide and 0 denotes free hemoglobin molecule. Find long run fraction of the time the hemoglobin spends in each three states.
 ```r
 library(markovChains)
 # Transition rate matrix
@@ -113,6 +113,29 @@ print(sonnet) # an example output:
 # [12] "reigns anothers view carve workings for comments thriftless awakes sufferance"      
 # [13] "thing lacking returnd print attend trees impiety temptation jewels slain"           
 # [14] "loathsome care made roses commits titles rather healthful sire wars"
+# [1] "Infinitesimal generator"
+#       [,1] [,2] [,3]
+# [1,]   -3    3    0
+# [2,]    1   -3    2
+# [3,]    0    4   -4
+# [1] "Jump-chain transition probability matrix"
+#          [,1] [,2]      [,3]
+# [1,] 0.0000000    1 0.0000000
+# [2,] 0.3333333    0 0.6666667
+# [3,] 0.0000000    1 0.0000000
+# [1] "Long term probability transition semigroup matrix"
+#          [,1]      [,2]      [,3]
+# [1,] 0.1818182 0.5454545 0.2727273
+# [2,] 0.1818182 0.5454545 0.2727273
+# [3,] 0.1818182 0.5454545 0.2727273
+# [1] "Simulation"
+#       time state
+# 1 0.0000000     0
+# 2 0.6923294     +
+# 3 0.8641708     0
+# 4 0.9841894     +
+# 5 1.4583014     0
+# 6 2.1225525     -
 ```
 
 ### Simulating Ham On Rye
