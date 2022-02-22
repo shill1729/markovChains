@@ -4,7 +4,9 @@
 \name{hamOnRye}
 \alias{hamOnRye}
 \title{Ham on Rye}
-\format{a data.frame containing massive text (characters/strings)}
+\format{
+a data.frame containing massive text (characters/strings)
+}
 \usage{
 data(hamOnRye)
 }

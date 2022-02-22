@@ -4,7 +4,9 @@
 \name{sonnets}
 \alias{sonnets}
 \title{Sonnets}
-\format{a data.frame containing massive text (characters/strings)}
+\format{
+a data.frame containing massive text (characters/strings)
+}
 \source{
 \href{https://www.opensourceshakespeare.org/views/sonnets/sonnet_view.php?Sonnet=all&pleasewait=1&msg=pl}{Open Source Shakespeare}
 }

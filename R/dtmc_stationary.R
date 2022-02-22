@@ -7,16 +7,13 @@
 #' @export dtmc_stationary
 dtmc_stationary <- function (P)
 {
-  m <- dim(P)[1]
-  b <- c(rep(0, m), 1)
-  I <- matrix(0, nrow = m, ncol = m)
-  diag(I) <- 1
-  A <- rbind(I - P, rep(1, m))
-  rank.A <- as.numeric(Matrix::rankMatrix(A))
-  rank.Ab <- as.numeric(Matrix::rankMatrix(cbind(A, b)))
-  if (rank.A != rank.Ab) {
-    stop("b in Ax=b not in column space of A")
-  } else {
-    return(drop(solve(t(A) %*% A, t(A) %*% b)))
-  }
+  n <- nrow(P)
+  I <- diag(nrow = n)
+  W <- t(P)-I
+  ones <- rep(1, n)
+  A <- rbind(W, ones)
+  b <- rep(0, n+1)
+  b[n+1] <- 1
+  pi <- qr.solve(A, b)
+  return(pi)
 }
