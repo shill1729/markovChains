@@ -9,7 +9,7 @@ dtmc_hitting_times(P, states)
 \arguments{
 \item{P}{original probability transition matrix}
 
-\item{states}{the set of states to hit}
+\item{states}{the set of states to hit, the exact row-indices}
 }
 \value{
 vector/matrix

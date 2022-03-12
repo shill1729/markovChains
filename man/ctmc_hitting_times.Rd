@@ -9,7 +9,7 @@ ctmc_hitting_times(Q, states)
 \arguments{
 \item{Q}{original probability transition matrix}
 
-\item{states}{the set of states to hit}
+\item{states}{the set of states to hit, the exact row-indices}
 }
 \value{
 vector/matrix

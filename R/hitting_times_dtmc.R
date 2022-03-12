@@ -1,7 +1,7 @@
 #' Compute expected hitting times until reaching a state
 #'
 #' @param P original probability transition matrix
-#' @param states the set of states to hit
+#' @param states the set of states to hit, the exact row-indices
 #'
 #' @description {Solve the linear system resulting from
 #' first step analysis until time of absorption.}
@@ -33,9 +33,9 @@ dtmc_hitting_times <- function(P, states)
 #' Compute expected hitting chance of reaching a state
 #'
 #' @param P original probability transition matrix
-#' @param states the set of states to hit
-#' @param before boolean to compute hitting probability of \code{states[1]} before
-#' \code{states[2]}.
+#' @param states the set of states to hit, the exact row-indices
+#' @param before boolean to compute hitting probability of \code{states[2]} before
+#' \code{states[1]}.
 #'
 #' @description {Solve the linear system resulting from
 #' first step analysis until time of absorption.}
@@ -83,7 +83,7 @@ dtmc_hitting_chances <- function(P, states, before = FALSE)
 #' Compute expected hitting times until reaching a state
 #'
 #' @param Q original probability transition matrix
-#' @param states the set of states to hit
+#' @param states the set of states to hit, the exact row-indices
 #'
 #' @description {Solve the linear system resulting from
 #' first step analysis until time of absorption.}
@@ -115,9 +115,9 @@ ctmc_hitting_times <- function(Q, states)
 #' Compute expected hitting chance of reaching a state
 #'
 #' @param Q original probability transition matrix
-#' @param states the set of states to hit
-#' @param before boolean to compute hitting probability of \code{states[1]} before
-#' \code{states[2]}.
+#' @param states the set of states to hit, the exact row-indices
+#' @param before boolean to compute hitting probability of \code{states[2]} before
+#' \code{states[1]}.
 #'
 #' @description {Solve the linear system resulting from
 #' first step analysis until time of absorption.}

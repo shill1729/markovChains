@@ -9,9 +9,10 @@ dtmc_hitting_chances(P, states, before = FALSE)
 \arguments{
 \item{P}{original probability transition matrix}
 
-\item{states}{the set of states to hit}
+\item{states}{the set of states to hit, the exact row-indices}
 
-\item{before}{boolean to compute hitting probability of state i before j}
+\item{before}{boolean to compute hitting probability of \code{states[2]} before
+\code{states[1]}.}
 }
 \value{
 vector/matrix
