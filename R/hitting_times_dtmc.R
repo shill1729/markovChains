@@ -34,7 +34,8 @@ dtmc_hitting_times <- function(P, states)
 #'
 #' @param P original probability transition matrix
 #' @param states the set of states to hit
-#' @param before boolean to compute hitting probability of state i before j
+#' @param before boolean to compute hitting probability of \code{states[1]} before
+#' \code{states[2]}.
 #'
 #' @description {Solve the linear system resulting from
 #' first step analysis until time of absorption.}
@@ -115,7 +116,8 @@ ctmc_hitting_times <- function(Q, states)
 #'
 #' @param Q original probability transition matrix
 #' @param states the set of states to hit
-#' @param before boolean to compute hitting probability of state i before j
+#' @param before boolean to compute hitting probability of \code{states[1]} before
+#' \code{states[2]}.
 #'
 #' @description {Solve the linear system resulting from
 #' first step analysis until time of absorption.}
