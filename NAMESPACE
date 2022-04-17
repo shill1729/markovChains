@@ -3,6 +3,7 @@
 export(birth_death_Q)
 export(ctmc_hitting_chances)
 export(ctmc_hitting_times)
+export(ctmc_steady_state)
 export(dtmc_hitting_chances)
 export(dtmc_hitting_times)
 export(dtmc_stationary)
